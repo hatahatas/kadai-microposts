@@ -8,14 +8,16 @@ delete 'logout', to: "sessions#destroy"
 
 
 get 'signup', to: 'users#new'
-resources :users, only: [:index, :show, :new, :create] do
+resources :users, only: [:index, :show, :new, :create, :likes] do
     member do
       get :followings
       get :followers
+      get :likes
     end
   end
 
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [ :show, :new, :create, :destroy] 
   resources :relationships, only: [:create, :destroy]
+  resources :like_microposts, only:[:create, :destroy]
 
 end

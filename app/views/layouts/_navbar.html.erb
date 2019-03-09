@@ -14,6 +14,9 @@
         <ul class="nav navbar-nav navbar-right">
           
 <% if logged_in? %>
+          <li>
+<%= link_to 'liked-list',likes_user_path(current_user) %>
+          </li>
 
           <li>
 <%= link_to 'Users' ,users_path %>
