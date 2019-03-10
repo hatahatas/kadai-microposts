@@ -15,20 +15,22 @@
           
 <% if logged_in? %>
           <li>
-<%= link_to 'liked-list',likes_user_path(current_user) %>
-          </li>
-
-          <li>
 <%= link_to 'Users' ,users_path %>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role"bnutton" arisa-haspopup="true" aria-expanded="false">
               <%= current_user.name %>
               <span class="caret"></span></a>
-              <ul class="dropdown-menu"></ul>
-              <li>
-<%= link_to "My profile",user_path(current_user) %>
+              
+              <ul class="dropdown-menu">
+                
+          <li>
+<%= link_to 'Liked-List',likes_user_path(current_user) %>
+          </li>
 
+           <li>
+<%= link_to "My profile",user_path(current_user) %>
+           </li>
            <li>
 <%= link_to 'Logout' ,logout_path, method: :delete %>
           </li>
@@ -45,9 +47,6 @@
           </li>
           <li>
   <%= link_to 'Login', login_path %>
-          </li>
-          <li>
-<%= link_to 'Logout' ,logout_path, method: :delete %>
           </li>
 <% end %>  
 

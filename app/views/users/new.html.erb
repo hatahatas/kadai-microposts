@@ -7,6 +7,10 @@
     <div class="col-md-6 col-md-offset-3">
 
 <%= form_for(@user) do |f| %>
+
+<%= render 'layouts/error_messages', model: f.object %>
+
+
     <div class="form-group">
 
 <%= f.label :name, 'Name' %>
@@ -38,15 +42,12 @@
 
       </div>
 <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+
 <% end %>    
 </div>
 </div>
 
 
-<%= form_for(@user) do |f| %>
 
       
-<%= render 'layouts/error_messages', model: f.object %>
 
-
-<% end %>
